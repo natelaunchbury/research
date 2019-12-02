@@ -1,0 +1,13 @@
+FCF tips:  
+- fcf_skip is the trivial case of distribution isomorphism
+- the “evalDist c (f x) == evalDist c x” hypothesis in distro_iso_eq is as hard to prove as your original goal if your game ends there (see “Bvect_constant_vs_constant” in DistributionIsomorphism.v) 
+- getSupport_In_Seq allows you to destruct intermediate steps in a sequence of probabilistic computations (see “OTS_keygen_incr” in LamportScheme.v for an example)
+- remember Coq fundamentals (destruction to get/give info, induction before intros, etc.)
+- often do “repeat simp_in_support” then destruct term then “repeat simp_in_support” again
+- relationship between evalDist and Pr[] (event lemma)
+- how do you "get into" program logic (in ElGamal.v)? comp_spec_eq_impl and others
+- even more basics: if False in assumptions use "apply except"
+- (Coq) “Opaque evalDist” will stop “simpl” from unfolding it. “Transparent” does the opposite
+- When applying the fundamental lemma, eq_until_bad will eventually need a call to “fcf_compute” to apply the arguments to evalDist and discharge the “untrue” case (see FundamentalLemma.v)
+- if you have a rule for each constructor of a data type, make an easy, general-purpose tactic that looks at the assumptions to decide how to apply each rule
+- “Pr[…] == Pr[…]” is for when you are returning a bool, “forall z,  evalDist … z == evalDist … z” is for other games that return pairs, for example. 
