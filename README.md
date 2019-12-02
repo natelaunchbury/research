@@ -1,2 +1,2 @@
 # research
-Miscellaneous repository with some FCF examples, slides, and other resources
+Miscellaneous repository of FCF examples, slides, and other resources
